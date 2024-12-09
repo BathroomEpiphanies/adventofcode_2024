@@ -24,20 +24,20 @@ def ordering(a:int, b:int, rules:dict[int,list[int]]) -> int:
 def part1(problem_input:tuple[dict[int,list[int]], list[list[int]]]) -> int:
     rules,manuals = problem_input
     key_function = cmp_to_key(partial(ordering, rules=rules))
-    sum:int = 0
+    total:int = 0
     for manual in manuals:
         manual_ = sorted(manual, key=key_function)
         if manual == manual_:
-            sum += manual[len(manual)//2]
-    return sum
+            total += manual[len(manual)//2]
+    return total
 
 
 def part2(problem_input:tuple[dict[int,list[int]], list[list[int]]]) -> int:
     rules,manuals = problem_input
     key_function = cmp_to_key(partial(ordering, rules=rules))
-    sum:int = 0
+    total:int = 0
     for manual in manuals:
         manual_ = sorted(manual, key=key_function)
         if manual != manual_:
-            sum += manual_[len(manual)//2]
-    return sum
+            total += manual_[len(manual)//2]
+    return total

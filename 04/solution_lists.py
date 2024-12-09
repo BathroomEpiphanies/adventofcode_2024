@@ -5,10 +5,10 @@ def parse_input(file_handle) -> list[str]:
 
 
 def count_xmas(rows:list[str]) -> int:
-    sum:int = 0
+    total:int = 0
     for row in rows:
-        sum += row.count('XMAS')
-    return sum
+        total += row.count('XMAS')
+    return total
 
 
 def get_rotated(matrix:list[str]) -> list[str]:
@@ -22,14 +22,14 @@ def get_diagonals(matrix:list[str]) -> list[str]:
 
 
 def part1(problem_input:list[str]) -> int:
-    sum:int = 0
+    total:int = 0
     matrix = problem_input
     for _ in range(4):
         diagonals = get_diagonals(matrix)
-        sum += count_xmas(matrix)
-        sum += count_xmas(diagonals)
+        total += count_xmas(matrix)
+        total += count_xmas(diagonals)
         matrix = get_rotated(matrix)
-    return sum
+    return total
 
 
 def count_x_mas(rows:list[str]) -> int:
@@ -42,9 +42,9 @@ def count_x_mas(rows:list[str]) -> int:
 
 
 def part2(problem_input:list[str]) -> int:
-    sum:int = 0
+    total:int = 0
     matrix = problem_input
     for _ in range(4):
-        sum += count_x_mas(matrix)
+        total += count_x_mas(matrix)
         matrix = get_rotated(matrix)
-    return sum
+    return total

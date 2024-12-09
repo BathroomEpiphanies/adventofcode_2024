@@ -9,28 +9,28 @@ def get_rotated(matrix:list[str]) -> list[str]:
 
 
 def part1(problem_input:list[str]) -> int:
-    sum:int = 0
+    total:int = 0
     matrix = problem_input
     for _ in range(4):
         for r in range(len(matrix)):
             for c in range(3, len(matrix[r])):
                 if matrix[r][c-3]=='X' and matrix[r][c-2]=='M' and matrix[r][c-1]=='A' and matrix[r][c]=='S':
-                    sum += 1
+                    total += 1
         for r in range(3, len(matrix)):
             for c in range(3, len(matrix[r])):
                 if matrix[r-3][c-3]=='X' and matrix[r-2][c-2]=='M' and matrix[r-1][c-1]=='A' and matrix[r][c]=='S':
-                    sum += 1
+                    total += 1
         matrix = get_rotated(matrix)
-    return sum
+    return total
 
 
 def part2(problem_input:list[str]) -> int:
-    sum:int = 0
+    total:int = 0
     matrix = problem_input
     for _ in range(4):
         for r in range(2, len(matrix)):
             for c in range(2, len(matrix[0])):
                 if matrix[r-2][c-2]=='M' and matrix[r][c-2]=='M' and matrix[r-1][c-1]=='A' and matrix[r-2][c]=='S' and matrix[r][c]=='S':
-                    sum += 1
+                    total += 1
         matrix = get_rotated(matrix)
-    return sum
+    return total

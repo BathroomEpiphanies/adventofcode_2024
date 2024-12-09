@@ -40,18 +40,18 @@ def parse_input(file_handle) -> list[list[Page]]:
 
 
 def part1(problem_input:list[list[Page]]) -> int:
-    sum:int = 0
+    total:int = 0
     for manual in problem_input:
         manual_ = sorted(manual)
         if manual_ == manual:
-            sum += int(manual[len(manual)//2])
-    return sum
+            total += int(manual[len(manual)//2])
+    return total
 
 
 def part2(problem_input:list[list[Page]]) -> int:
-    sum:int = 0
+    total:int = 0
     for manual in problem_input:
         manual_ = sorted(manual)
         if manual_ != manual:
-            sum += int(manual_[len(manual)//2])
-    return sum
+            total += int(manual_[len(manual)//2])
+    return total

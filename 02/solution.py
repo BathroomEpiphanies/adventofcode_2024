@@ -11,11 +11,11 @@ def report_is_safe(report:list[int]) -> bool:
 
 
 def part1(problem_input:list[list[int]]) -> int:
-    sum:int = 0
+    total:int = 0
     for report in problem_input:
         if report_is_safe(report):
-            sum += 1
-    return sum
+            total += 1
+    return total
 
 
 def dampened_reports(report:list[int]) -> Generator[list[int], None, None]:
@@ -24,8 +24,8 @@ def dampened_reports(report:list[int]) -> Generator[list[int], None, None]:
 
 
 def part2(problem_input:list[list[int]]) -> int:
-    sum:int = 0
+    total:int = 0
     for report in problem_input:
         if any(report_is_safe(r) for r in dampened_reports(report)):
-            sum += 1
-    return sum
+            total += 1
+    return total

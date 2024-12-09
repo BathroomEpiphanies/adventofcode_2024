@@ -7,15 +7,15 @@ def parse_input(file_handle) -> tuple[list[int],list[int]]:
 
 
 def part1(problem_input:tuple[list[int],list[int]]) -> int:
-    sum:int = 0
+    total:int = 0
     first,second = problem_input
     for a,b in zip(sorted(first),sorted(second)):
-        sum += abs(b-a)
-    return sum
+        total += abs(b-a)
+    return total
 
 
 def part2(problem_input:tuple[list[int],list[int]]) -> int:
-    sum:int = 0
+    total:int = 0
     for a in problem_input[0]:
-        sum += a*problem_input[1].count(a)
-    return sum
+        total += a*problem_input[1].count(a)
+    return total
